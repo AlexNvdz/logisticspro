@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<section class="orders-section">
+  <div class="orders-wrapper">
+    <h2>Lista de Envíos</h2>
+
+    <% if (orders.length === 0) { %>
+      <p class="empty-msg">No hay envíos registrados aún.</p>
+    <% } else { %>
+      <div class="table-wrapper">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Destino</th>
+              <th>Paquete</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% orders.forEach(order => { %>
+              <tr>
+                <td><%= order.id %></td>
+                <td><%= order.client %></td>
+                <td><%= order.destination %></td>
+                <td><%= order.packageType %></td>
+                <td><span class="status"><%= order.status %></span></td>
+                <td><%= order.createdAt.toLocaleString() %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

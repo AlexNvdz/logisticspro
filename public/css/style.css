@@ -1,0 +1,306 @@
+/* ==============================
+   GENERAL
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+.navbar {
+    background: linear-gradient(90deg, #1a237e, #3949ab); /* azul elegante */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.navbar-logo span {
+  color: #fff;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center; /* 🔥 Menú centrado */
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.nav-links li a:hover {
+  color: #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* ==============================
+   FORMULARIOS
+============================== */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+}
+
+.form-container {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #B22222;
+}
+
+/* Campos del formulario */
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border: 1px solid #B22222;
+  box-shadow: 0 0 6px rgba(178, 34, 34, 0.4);
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  background: #B22222;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #8B0000;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #444;
+}
+
+.btn-secondary:hover {
+  background: #222;
+}
+
+/* ==============================
+   TABLAS (si usas "Ver envíos")
+============================== */
+.table-container {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 900px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #B22222;
+  color: white;
+}
+
+table tr:hover {
+  background: #f9f9f9;
+}
+/* -------- NAVBAR LOGO -------- */
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    border-radius: 5px; /* si quieres esquinas redondeadas */
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px;
+    transition: all 0.3s ease;
+    color: #fff;
+    background: #1a73e8; /* Azul */
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* VARIANTES */
+.btn-success {
+    background: #28a745; /* Verde */
+}
+
+.btn-secondary {
+    background: #6c757d; /* Gris */
+}
+
+/* -------- BOTONES -------- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #c62828;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #a31818;
+}
+
+.btn-secondary {
+    background: #444;
+}
+
+.btn-secondary:hover {
+    background: #222;
+}
+/* BOTONES GENERALES */
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* COLORES PERSONALIZADOS */
+.btn {
+    background: #1a73e8; /* azul google */
+}
+
+.btn-secondary {
+    background: #6c757d; /* gris */
+}
+
+.btn-success {
+    background: #28a745; /* verde */
+}

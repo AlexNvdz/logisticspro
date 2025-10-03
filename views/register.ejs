@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+
+<section class="form-section">
+  <div class="form-container">
+    <h2>Registrar un Envío</h2>
+
+    <% if (error) { %>
+      <div class="form-error"><%= error %></div>
+    <% } %>
+
+    <form action="/register" method="POST" onsubmit="return validateForm()">
+      <label for="id">ID del Envío (solo números)</label>
+      <input type="text" name="id" id="id" required pattern="\d+" title="Solo números" value="<%= formData.id ? formData.id : '' %>">
+
+      <label for="client">Cliente (solo letras)</label>
+      <input type="text" name="client" id="client" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" title="Solo letras" value="<%= formData.client ? formData.client : '' %>">
+
+      <label for="destination">Destino (solo letras)</label>
+      <input type="text" name="destination" id="destination" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" title="Solo letras" value="<%= formData.destination ? formData.destination : '' %>">
+
+      <label for="packageType">Tipo de Paquete</label>
+      <select name="packageType" id="packageType" required>
+        <option value="">Seleccione...</option>
+        <option value="Documentos" <%= formData.packageType === 'Documentos' ? 'selected' : '' %>>Documentos</option>
+        <option value="Caja pequeña" <%= formData.packageType === 'Caja pequeña' ? 'selected' : '' %>>Caja pequeña</option>
+        <option value="Caja mediana" <%= formData.packageType === 'Caja mediana' ? 'selected' : '' %>>Caja mediana</option>
+        <option value="Caja grande" <%= formData.packageType === 'Caja grande' ? 'selected' : '' %>>Caja grande</option>
+      </select>
+
+      <button type="submit" class="btn-animated">Registrar</button>
+    </form>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

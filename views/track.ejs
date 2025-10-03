@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<section class="form-section">
+  <div class="form-container">
+    <h2>Seguimiento de Pedido</h2>
+    <form action="/track" method="POST">
+      <label for="id">ID del Envío</label>
+      <input type="text" name="id" required pattern="[0-9]+">
+      <button type="submit" class="btn-animated">Consultar</button>
+    </form>
+
+    <% if (order) { %>
+      <div class="track-result">
+        <h3>📦 Estado del Pedido</h3>
+        <p>ID: <%= order.id %></p>
+        <p>Cliente: <%= order.client %></p>
+        <p>Destino: <%= order.destination %></p>
+        <p>Paquete: <%= order.packageType %></p>
+        <p><strong>Estado:</strong> <%= order.status %></p>
+      </div>
+    <% } %>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

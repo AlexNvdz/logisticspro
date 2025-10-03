@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<section class="success-section">
+  <div class="success-container">
+    <h2>✅ Envío Registrado Correctamente</h2>
+
+  
+      <p><strong>ID:</strong> <%= order.id %></p>
+      <p><strong>Cliente:</strong> <%= order.client %></p>
+      <p><strong>Destino:</strong> <%= order.destination %></p>
+      <p><strong>Paquete:</strong> <%= order.packageType %></p>
+      <p><strong>Estado:</strong> <span class="status"><%= order.status %></span></p>
+      <p><strong>Fecha:</strong> <%= order.createdAt.toLocaleString() %></p>
+      
+    </div>
+      
+    <div class="success-actions">
+      <a href="/register" class="btn-animated">Registrar otro envío</a>
+      <a href="/" class="btn-animated btn-secondary">Ir al inicio</a>
+      <a href="/orders/view" class="btn-animated btn-outline">Ver todos los envíos</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
