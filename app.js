@@ -74,6 +74,11 @@ app.get('/orders', (req, res) => {
   res.json(orders);
 });
 
-app.listen(PORT, () => {
-  console.log(`🚚 LogisticsPro corriendo en http://localhost:${PORT}`);
-});
+if (process.env.VERCEL) {
+  module.exports = app; // para que Vercel lo use como serverless
+} else {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`🚚 LogisticsPro corriendo en http://localhost:${PORT}`);
+  });
+}
